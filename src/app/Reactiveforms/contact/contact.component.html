@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Contact US</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='contact.component.css'>
+    </head>
+
+    <body>
+        <h1>Reactive Form Angular JS</h1>
+        
+        <div id = "section" class="col-sm-6">
+            
+            <form [formGroup] = "contactForm" (ngSubmit)="onSubmit()">
+
+                <div class="addimage">
+                    <!--- <img [src] = backgroundimg> !--->
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <br><br>
+                    <input type="email" class="form-control" formControlName="email" placeholder="Example@email.com"/>
+                    {{email?.value}}
+                    <span *ngIf="email?.invalid && email?.touched" style="color: rgb(164, 47, 47); padding-left: 15px;">Please Provide Valid Email</span>
+                    <br><br>
+                    
+                </div>
+
+                <div class="form-group">
+                    <label>Name</label>
+                    <br><br>
+                    <input type="text" class="form-control" formControlName="name" placeholder="Enter Name">
+                    <br><br>
+                </div>
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <br><br>
+                    <input type="text" class="form-control" formControlName="number" placeholder="e.g. 03323210320">
+                    <span *ngIf="number?.invalid && number?.touched" style="color: rgb(164, 47, 47); padding-left: 15px;">Please Provide Valid Number</span>
+                    <br><br>
+                </div>
+
+                <div class="form-group">
+                    <label>Feedback</label>
+                    <br><br>
+                    <input type="text" class="form-control" formControlName="feedback" placeholder="Enter Description">
+                    <br><br>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+                
+            </form>
+        </div>
+
+        
+        
+    </body>
+
+</html>
